@@ -1,0 +1,119 @@
+===========================================
+Writing solid and extensible jQuery plugins
+===========================================
+
+I personally, don't like the way `jquery.com`_ encourages you to write plugins,
+as it's easy to end up with a large spaghetti plate even if you're not living
+in Italy :)
+
+Despite the fact that I am a Python geek and Python is about doing things
+clean and quickly with no more than one namespace - just kidding - I still
+like classes, instances, interfaces, utilities and adapters - this may be due
+the fact that for the last 7 year I mostly worked with Zope and Zope Components.
+
+Thus, after 4 years of adding life to my work through JavaScript I am ready
+to share with you a very powerful way of writing JavaScript code and hence
+jQuery plugins.
+
+First of all let me to share with you the following statement from
+The Zen of Python, by Tim Peters:
+
+  ** Namespaces are one honking great idea -- let's do more of those! **
+
+Why not to apply this also when writing JavaScript code. Here is how we start,
+we define our top namespace, safely, in order to allow it to be extend later
+outside of this JS file::
+
+  if(!window.Alien){
+    var Alien = {"version": "1.0"};
+  }
+
+
+And from here we begin to add our plugins::
+
+  Alien.Ship = function(context, options){
+    var self = this;
+    self.context = context;
+
+    self.settings = {
+      width: 800,
+      height: 600
+    };
+
+
+    if(options){
+      jQuery.extend(self.settings, options);
+    }
+
+    self.initialize();
+  };
+
+
+Now that we've added our constructor, let's make it possible to instantiate
+it with the new JS keyword::
+
+  Alien.Ship.prototype = {
+   initialize: function(){
+     var self = this;
+
+     // Bind some events
+     self.context.bind('width-changed', function(evt, data){
+       self.handle_width(data);
+     });
+
+     self.context.bind('height-changed', function(evt, data){
+       self.handle_height(data);
+     });
+
+     // Do some initialization
+     self.context.css('background-color', 'gray');
+   },
+
+
+   handle_width: function(data){
+     var self = this;
+     self.settings.width = data.width;
+   },
+
+   handle_height: function(data){
+     var self = this;
+     self.settings.height = data.height;
+   }
+ };
+
+
+OK, but where is the jQuery plugin. Well, here it is::
+
+  jQuery.fn.AlienShip = function(options){
+    return this.each(function(){
+      var context = jQuery(this);
+      var ship = new Alien.Ship(context, options);
+      context.data('AlienShip', ship);
+    });
+  };
+
+
+Whis this, we have the power of a jQuery plugins brought together with the
+flexibility of the prototype object from JavaScript.
+
+
+It's easy to call it::
+
+  jQuery('.car').AlienShip({width: 1024, height: 800});
+
+
+It easy to access it::
+
+  jQuery('.car').data('AlienShip').settings.width;
+
+
+And it's easy to extend it::
+
+  Alien.Ship.prototype.handle_width = function(data){
+    var self = this;
+    self.settings.width = data.width / 2;
+  };
+
+Download this full javascript file at https://gist.github.com/3717757
+
+.. _`jquery.com`: http://docs.jquery.com/Plugins/Authoring

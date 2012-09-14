@@ -3,12 +3,17 @@
 # Packages
 *.egg
 *.egg-info
+*.wpr
+*.wpu
 dist
 build
 eggs
 parts
 bin
 var
+lib
+include
+local
 sdist
 develop-eggs
 .installed.cfg
@@ -25,3 +30,9 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+#Sphinx
+.buildinfo
+.doctrees
+_doctrees
+doctrees

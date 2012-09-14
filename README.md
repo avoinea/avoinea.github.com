@@ -1,2 +1,1 @@
-avoinea.github.com
-==================
+See http://avoinea.github.com
