@@ -133,8 +133,8 @@ And it's **easy to extend** it:
   };
 
 
-`Download this full javascript file`_
+`Download the full javascript file`_
 
 
 .. _`jquery.com`: http://docs.jquery.com/Plugins/Authoring
-.. _`Download this full javascript file`: https://gist.github.com/3717757
+.. _`Download the full javascript file`: https://gist.github.com/3717757

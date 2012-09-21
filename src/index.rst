@@ -10,3 +10,4 @@ Articles
   :maxdepth: 1
 
   article/jquery-plugins.rst
+  article/faav-jaav.rst
