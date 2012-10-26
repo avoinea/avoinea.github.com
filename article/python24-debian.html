@@ -4,32 +4,32 @@
     <meta http-equiv="Content-Type"
           content="text/html; charset=utf-8"/>
     
-        <title>Alin Voinea &mdash; Alin Voinea 6.0 documentation</title>
+        <title>Installing Python 2.4 with-zlib on Debian squeeze &mdash; Alin Voinea 6.0 documentation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="_static/sphinx-bootstrap.css" type="text/css"/>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css"/>
+    <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
         <script type="text/javascript">
             var DOCUMENTATION_OPTIONS = {
-                URL_ROOT:'',
+                URL_ROOT:'../',
                 VERSION:'6.0',
                 COLLAPSE_INDEX:false,
                 FILE_SUFFIX:'.html',
                 HAS_SOURCE:  true
             };
         </script>
-            <script type="text/javascript" src="_static/jquery.js"></script>
-            <script type="text/javascript" src="_static/underscore.js"></script>
-            <script type="text/javascript" src="_static/doctools.js"></script>
-            <script type="text/javascript" src="_static/bootstrap-dropdown.js"></script>
-            <script type="text/javascript" src="_static/jquery.tools.min.js"></script>
-            <script type="text/javascript" src="_static/bootstrap-custom.js"></script>
-        <link rel="top" title="Alin Voinea 6.0 documentation" href="#"/>
-            <link rel="next" title="Writing solid and extensible jQuery plugins" href="article/jquery-plugins.html"/> 
+            <script type="text/javascript" src="../_static/jquery.js"></script>
+            <script type="text/javascript" src="../_static/underscore.js"></script>
+            <script type="text/javascript" src="../_static/doctools.js"></script>
+            <script type="text/javascript" src="../_static/bootstrap-dropdown.js"></script>
+            <script type="text/javascript" src="../_static/jquery.tools.min.js"></script>
+            <script type="text/javascript" src="../_static/bootstrap-custom.js"></script>
+        <link rel="top" title="Alin Voinea 6.0 documentation" href="../index.html"/>
+            <link rel="prev" title="What FAAV (JAAV) stands for?" href="faav-jaav.html"/> 
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     
 </head>
@@ -42,20 +42,20 @@
     <div class="related">
         <ul class="nav">
                 <li class="active"><a class="brand"
-                       href="#">Alin Voinea</a></li>
+                       href="../index.html">Alin Voinea</a></li>
                 <li>
-                    <a href="genindex.html"
+                    <a href="../genindex.html"
                        title="General Index" accesskey="I">index</a>
                 </li>
                 <li>
-                    <a href="article/jquery-plugins.html"
-                       title="Writing solid and extensible jQuery plugins" accesskey="N">next</a>
+                    <a href="faav-jaav.html"
+                       title="What FAAV (JAAV) stands for?" accesskey="P">previous</a>
                 </li> 
         </ul>
     </div>
                 <div class="pull-right">
                     
-        <form class="navbar-search" action="search.html"
+        <form class="navbar-search" action="../search.html"
               method="get">
             <input type="text" name="q" placeholder="search"/>
             <input type="hidden" name="check_keywords" value="yes"/>
@@ -110,19 +110,52 @@
         <div class="content row">
                 <div class="span9">
                     
-  <div class="section" id="alin-voinea">
-<h1>Alin Voinea<a class="headerlink" href="#alin-voinea" title="Permalink to this headline">¶</a></h1>
-<p>Python, Zope, Plone consultant and developer &#64; Eau de Web, Romania</p>
-<div class="section" id="articles">
-<h2>Articles<a class="headerlink" href="#articles" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="article/jquery-plugins.html">Writing solid and extensible jQuery plugins</a></li>
-<li class="toctree-l1"><a class="reference internal" href="article/faav-jaav.html">What FAAV (JAAV) stands for?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="article/python24-debian.html">Installing Python 2.4 with-zlib on Debian squeeze</a></li>
-</ul>
+  <div class="section" id="installing-python-2-4-with-zlib-on-debian-squeeze">
+<h1>Installing Python 2.4 with-zlib on Debian squeeze<a class="headerlink" href="#installing-python-2-4-with-zlib-on-debian-squeeze" title="Permalink to this headline">¶</a></h1>
+<p>Yap, it&#8217;s not as easy as it is supposed to be.</p>
+<p>1. First of all make sure you have installed <strong>zlib-dev</strong> library,
+which in Debian/Ubuntu is called <strong>zlib1-dev</strong>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> sudo aptitude install zlib1-dev
+</pre></div>
 </div>
+<ol class="arabic simple" start="2">
+<li>Download Python from <a class="reference external" href="http://www.python.org/download/releases/2.4.6/">http://www.python.org/download/releases/2.4.6/</a></li>
+</ol>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> <span class="nb">cd</span> /tmp
+<span class="gp">$</span> wget http://www.python.org/ftp/python/2.4.6/Python-2.4.6.tgz
+</pre></div>
 </div>
+<ol class="arabic simple" start="3">
+<li>Decompress it:</li>
+</ol>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> tar -zxvf Python-2.4.6.tgz
+</pre></div>
+</div>
+<p>4. Compile it. STOP, I did that 10 times already with and without
+<cite>&#8211;with-zlib=/usr/include</cite> option, nothing, only a lot of frustration. So here
+is the key:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> <span class="nb">cd</span> /lib
+<span class="gp">$</span> sudo ln -s x86_64-linux-gnu/libz.so.1 libz.so
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>Now compile and install python:</li>
+</ol>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> <span class="nb">cd</span> /tmp/Python-2.4.6
+<span class="gp">$</span> ./configure --prefix<span class="o">=</span>/opt/python24
+<span class="gp">$</span> make
+<span class="gp">$</span> make install
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li>Test if zlib is installed:</li>
+</ol>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> /opt/python24/bin/python -c <span class="s2">&quot;import zlib&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li>Enjoy :o)</li>
+</ol>
 </div>
 
 
@@ -135,22 +168,12 @@
                     
         <div class="sphinxsidebar">
             <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Alin Voinea</a><ul>
-<li><a class="reference internal" href="#articles">Articles</a><ul>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  <h4>Next topic</h4>
-  <p class="topless"><a href="article/jquery-plugins.html"
-                        title="next chapter">Writing solid and extensible jQuery plugins</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="faav-jaav.html"
+                        title="previous chapter">What FAAV (JAAV) stands for?</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="_sources/index.txt"
+    <li><a href="../_sources/article/python24-debian.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
             </div>
@@ -178,7 +201,7 @@
 
     <!-- disqus -->
     <script type="text/javascript">
-        var disqus_title = 'Alin Voinea &mdash; Alin Voinea 6.0 documentation';
+        var disqus_title = 'Installing Python 2.4 with-zlib on Debian squeeze &mdash; Alin Voinea 6.0 documentation';
         var disqus_identifier ='code' + '.' + "avoinea" + window.location.pathname.replace('/', '.');
     </script>
 
