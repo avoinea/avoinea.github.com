@@ -1,0 +1,13 @@
+- text: Home
+  url: /
+- subitems:
+  - text: Articles
+    url: /articles
+    - subitems:
+      - text: Writing solid and extensible jQuery plugins
+        url: /articles/jquery/
+      - text: Installing Python 2.4 with-zlib on Debian squeeze
+        url: /articles/zlib/
+  - text: Old Blog
+    url: https://avoinea.blogspot.com
+
