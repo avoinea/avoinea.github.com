@@ -4,4 +4,4 @@ title: Alin Voinea
 
 # Alin Voinea
 
-Romanian Docker, Python, Zope, Plone consultant and developer
+See my [old blog](https://avoinea.blogspot.com) while I'm working on this one ;)

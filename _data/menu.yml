@@ -3,7 +3,7 @@
 - subitems:
   - text: Articles
     url: /articles
-    subitems:
+  - subitems:
     - text: Writing solid and extensible jQuery plugins
       url: /articles/jquery/
     - text: Installing Python 2.4 with-zlib on Debian squeeze
